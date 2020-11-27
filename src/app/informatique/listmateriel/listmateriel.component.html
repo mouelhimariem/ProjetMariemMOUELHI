@@ -1,0 +1,8 @@
+<h1>Nos produits en informatique</h1>
+<ul><ng-container *ngFor="let t of materiels" >
+    <li *ngIf="t.quantite>0">
+        <app-materiel [t]="t"></app-materiel>
+    </li>
+   
+</ng-container>
+</ul>
