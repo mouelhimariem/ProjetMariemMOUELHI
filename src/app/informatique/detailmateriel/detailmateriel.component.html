@@ -1,6 +1,6 @@
 
     <div class="row"> 
-        <div class="column col-md-7"> 
+        <div class="column col-md-6"> 
             <h1 class="pt-3">Détail du "Pc d'id:2</h1>
             <ul class="list-group">
                 <li class="list-group-item"> <img [src]="materiel.photo" alt="photo"></li>
@@ -9,22 +9,22 @@
                 <li class="list-group-item">Description {{materiel.description}}</li>
                 <li class="list-group-item">Quantite {{materiel.quantite}}</li>
                 <li class="list-group-item"><input type="checkbox" disabled [checked]="materiel.hautGamme">Haut de Gamme</li>
-                <li class="list-group-item"><button class="btn btn-info">Afficher les commentaires</button></li>
+                <li class="list-group-item"><button class="btn btn-info" (click)="affichecmnt()">Afficher les commentaires</button></li>
 
             </ul>
         </div>
         <div class="column col-md-5"> 
+            <div [hidden]="commentairesaffiche">
             <h1 class="pt-3">List des commentaires</h1>
-            <div class="row">a
+            <ul class="list-group">
 
-            </div>
-            <div class="row">b
 
-            </div>
-            <div class="row">c
+                <li class="list-group-item" *ngFor="let c of materiel.commentaires" >
+                        <app-comment [cmnt]="c"></app-comment>  
+                     </li>
 
-            </div>
-            
+            </ul>
+        </div>
         </div>
 
 </div>

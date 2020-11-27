@@ -7,6 +7,7 @@ import { Materiel } from 'src/app/models/materiel';
   styleUrls: ['./detailmateriel.component.css']
 })
 export class DetailmaterielComponent implements OnInit {
+  commentairesaffiche:boolean=true;
   materiel:Materiel ={
     id: '2',
     libelle: 'PC',
@@ -21,8 +22,12 @@ export class DetailmaterielComponent implements OnInit {
 {contenu:'Bon rapport qualité prix', note:4, auteur:'Samar Salah', date:new Date(
 2020,10,4)}]
 };
-
-  constructor() { }
+affichecmnt(){
+  console.log(this.commentairesaffiche)
+  this.commentairesaffiche=false;
+}
+  constructor() {    
+  }
 
   ngOnInit(): void {
   }
